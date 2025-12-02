@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Modern E-commerce Website" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopNow - E-Commerce Platform</title>
+  <link rel="stylesheet" href="shop.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="top-bar">
+      <h1>ShopNow</h1>
+      <form class="search-bar">
+        <input type="text" placeholder="Search products..." />
+        <button type="submit">Search</button>
+      </form>
+      <div class="user-options">
+        <a href="#" onclick="openModal('login')">Login</a> |
+        <a href="#" onclick="openModal('register')">Register</a> |
+        <a href="#">🛒 <span class="cart-count">3</span></a>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#cart">Cart</a>
+      <a href="#checkout">Payment</a>
+      <a href="#orders">My Orders</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Login/Register Modal -->
+  <div id="authModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div id="loginForm">
+        <h2>Login</h2>
+        <form onsubmit="return false;">
+          <input type="email" placeholder="Email" required /><br />
+          <input type="password" placeholder="Password" required /><br />
+          <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+      </div>
+      <div id="registerForm" class="hidden">
+        <h2>Register</h2>
+        <form onsubmit="return false;">
+          <input type="text" placeholder="Full Name" required /><br />
+          <input type="email" placeholder="Email" required /><br />
+          <input type="password" placeholder="Password" required /><br />
+          <input type="password" placeholder="Confirm Password" required /><br />
+          <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Sidebar Filters -->
+    <aside class="sidebar">
+      <h3>Filter By</h3>
+      <form>
+        <label>Category</label><br />
+        <select>
+          <option>All</option>
+          <option>Electronics</option>
+          <option>Clothing</option>
+          <option>Accessories</option>
+        </select><br /><br />
+
+        <label>Price</label><br />
+        <input type="range" min="10" max="1000" /><br /><br />
+
+        <button type="submit">Apply Filters</button>
+      </form>
+    </aside>
+
+    <!-- Product Browsing Section -->
+    <section class="products" id="products">
+      <h2>Browse Products</h2>
+      <article class="product">
+        <img src="phone.jpg" alt="Phone" />
+        <h3>Smartphone</h3>
+        <p>$499</p>
+        <p>⭐⭐⭐⭐☆ (4.0)</p>
+        <button class="add-to-cart" data-product="Smartphone">Add to Cart</button>
+      </article>
+      <article class="product">
+        <img src="shoes.jpeg" alt="Shoes" />
+        <h3>Running Shoes</h3>
+        <p>$89</p>
+        <p>⭐⭐⭐⭐⭐ (5.0)</p>
+        <button class="add-to-cart" data-product="Running Shoes">Add to Cart</button>
+      </article>
+      <article class="product">
+        <img src="headphone.jpg" alt="Headphones" />
+        <h3>Wireless Headphones</h3>
+        <p>$129</p>
+        <p>⭐⭐⭐⭐☆ (4.5)</p>
+        <button class="add-to-cart" data-product="Wireless Headphones">Add to Cart</button>
+      </article>
+      <article class="product">
+        <img src="sunglass.jpg" alt="Sunglass" />
+        <h3>Sunglass</h3>
+        <p>$99</p>
+        <p>⭐⭐⭐⭐☆ (5.0)</p>
+        <button class="add-to-cart" data-product="Sunglass">Add to Cart</button>
+      </article>
+      <article class="product">
+        <img src="trimer.jpg" alt="Trimmer" />
+        <h3>Trimmer</h3>
+        <p>$110</p>
+        <p>⭐⭐⭐⭐☆ (4.5)</p>
+        <button class="add-to-cart" data-product="Trimmer">Add to Cart</button>
+      </article>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart">
+      <h2>Shopping Cart</h2>
+      <ul id="cartItems">
+        <li>Smartphone - $499 <button>Remove</button></li>
+        <li>Running Shoes - $89 <button>Remove</button></li>
+      </ul>
+      <p><strong>Total: $588</strong></p>
+      <a href="#checkout"><button>Proceed to Checkout</button></a>
+    </section>
+
+    <!-- Checkout/Payment Section -->
+    <section id="checkout">
+      <h2>Checkout / Payment</h2>
+      <form>
+        <label>Full Name:</label><br />
+        <input type="text" required /><br /><br />
+
+        <label>Card Number:</label><br />
+        <input type="text" placeholder="1234 5678 9012 3456" required /><br /><br />
+
+        <label>Expiry:</label><br />
+        <input type="text" placeholder="MM/YY" required /><br /><br />
+
+        <label>CVV:</label><br />
+        <input type="password" placeholder="123" required /><br /><br />
+
+        <button type="submit">Pay Now</button>
+      </form>
+    </section>
+
+    <!-- Order History Section -->
+    <section id="orders">
+      <h2>My Orders</h2>
+      <ul>
+        <li>Order #1023 - Wireless Headphones - $129 - Delivered</li>
+        <li>Order #1017 - Running Shoes - $89 - In Transit</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Newsletter -->
+  <section class="newsletter" id="contact">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form>
+      <input type="email" placeholder="Enter your email" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-info">
+      <div>
+        <h3>ShopNow</h3>
+        <p>Your trusted online store.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Help Center</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: support@shopnow.com</p>
+        <p>Phone: +123-456-7890</p>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 ShopNow. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

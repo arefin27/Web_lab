@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="ecom.css">
+  <meta name="description" content="Professional e-commerce layout using pure HTML">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopNow - Your Online Store</title>
+</head>
+<body>
+
+  <header>
+    <h1>ShopNow</h1>
+    <nav>
+      <a href="#home">Home</a> |
+      <a href="#products">Products</a> |
+      <a href="#categories">Categories</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="home">
+      <h2>Welcome to ShopNow</h2>
+      <p>Your one-stop shop for all your fashion, electronics, and lifestyle needs.</p>
+      <img src="banner.jpg" alt="Banner Image">
+    </section>
+
+    <section id="products">
+      <h2>Featured Products</h2>
+
+      <article>
+        <h3>Smartphone</h3>
+        <img src="phone.jpg" alt="Smartphone Image">
+        <p><strong>$499</strong></p>
+        <p><em>Latest model with advanced features.</em></p>
+        <button>Add to Cart</button>
+      </article>
+
+      <article>
+        <h3>Running Shoes</h3>
+        <img src="shoes.jpeg" alt="Shoes Image">
+        <p><strong>$89</strong></p>
+        <p><em>Comfortable and stylish for all runners.</em></p>
+        <button>Add to Cart</button>
+      </article>
+
+      <article>
+        <h3>Wireless Headphones</h3>
+        <img src="headphone.jpg" alt="Headphones Image">
+        <p><strong>$129</strong></p>
+        <p><em>High-quality sound with noise cancellation.</em></p>
+        <button>Add to Cart</button>
+      </article>
+    </section>
+
+    <section id="categories">
+      <h2>Categories</h2>
+      <ul>
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Clothing</a></li>
+        <li><a href="#">Footwear</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </section>
+
+    <aside>
+      <h2>Customer Reviews</h2>
+      <p><strong>Jane Doe:</strong> "Amazing products and fast delivery!"</p>
+      <p><strong>John Smith:</strong> "Great value for money."</p>
+    </aside>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form action="/submit" method="POST">
+        <fieldset>
+          <legend>Get in Touch</legend>
+
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name"><br><br>
+
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email"><br><br>
+
+          <label for="subject">Subject:</label><br>
+          <select id="subject" name="subject">
+            <option value="order">Order Inquiry</option>
+            <option value="support">Customer Support</option>
+            <option value="feedback">Feedback</option>
+          </select><br><br>
+
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="5" cols="40"></textarea><br><br>
+
+          <button type="submit">Send Message</button>
+        </fieldset>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ShopNow. All rights reserved.</p>
+    <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+  </footer>
+
+</body>
+</html>
